@@ -1,0 +1,257 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.99 0 0); /* 更純淨的白色背景 */
+  --foreground: oklch(0.15 0 0); /* 更深的文字色彩，提升專業感 */
+  --card: oklch(0.98 0 0); /* 卡片背景稍微偏白 */
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+
+  /* 更新為土地銀行官方品牌色系 - 更保守專業的深綠色調 */
+  --primary: oklch(0.22 0.1 155); /* 土銀官方深綠色 #1a4d2e */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.45 0.02 155); /* 中性綠灰色 */
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.96 0.01 155); /* 極淺綠色調背景 */
+  --muted-foreground: oklch(0.45 0.02 0);
+
+  /* 土銀官方金色調整為更典雅的色調 */
+  --accent: oklch(0.58 0.12 75); /* 土銀典雅金色 #b8860b */
+  --accent-foreground: oklch(1 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325); /* #dc2626 */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff */
+  --border: oklch(0.9 0.01 155); /* 邊框帶有淡綠色調 */
+  --input: oklch(0.97 0.01 155);
+
+  --ring: oklch(0.22 0.1 155 / 0.3); /* 土銀綠色透明 */
+
+  /* 圖表色彩更新為土銀官方色系漸層 */
+  --chart-1: oklch(0.88 0.03 155); /* 最淺綠 */
+  --chart-2: oklch(0.75 0.05 155); /* 淺綠 */
+  --chart-3: oklch(0.62 0.07 155); /* 中綠 */
+  --chart-4: oklch(0.45 0.09 155); /* 深綠 */
+  --chart-5: oklch(0.32 0.11 155); /* 最深綠 */
+
+  --radius: 0.375rem; /* 稍微減少圓角，更符合銀行業保守風格 */
+  --sidebar: oklch(0.97 0.01 155);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.22 0.1 155);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.58 0.12 75);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.9 0.01 155);
+  --sidebar-ring: oklch(0.22 0.1 155 / 0.3);
+
+  /* 更新土銀專屬品牌色彩變數為官方色調 */
+  --land-bank-green: oklch(0.22 0.1 155); /* 土銀官方主綠色 */
+  --land-bank-gold: oklch(0.58 0.12 75); /* 土銀官方金色 */
+  --land-bank-light-green: oklch(0.75 0.05 155); /* 土銀淺綠 */
+  --trust-blue: oklch(0.35 0.08 210); /* 更深沉的信賴藍 */
+  --stability-gray: oklch(0.25 0.01 0); /* 穩健深灰 */
+  --heritage-brown: oklch(0.4 0.06 45); /* 傳統棕色，體現百年歷史 */
+  --font-noto-sans-tc: "Noto Sans TC";
+  --font-inter: "Inter";
+}
+
+.dark {
+  --background: oklch(0.08 0 0); /* 更深的背景 */
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.1 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+
+  /* 深色模式下的土銀品牌色調整為更適合的亮度 */
+  --primary: oklch(0.4 0.12 155); /* 深色模式土銀綠 */
+  --primary-foreground: oklch(1 0 0);
+
+  --secondary: oklch(0.2 0.02 155);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.15 0.01 155);
+  --muted-foreground: oklch(0.65 0.02 0);
+
+  --accent: oklch(0.65 0.15 75); /* 深色模式土銀金 */
+  --accent-foreground: oklch(0.08 0 0);
+
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.95 0 0);
+  --border: oklch(0.2 0.01 155);
+  --input: oklch(0.15 0.01 155);
+  --ring: oklch(0.4 0.12 155 / 0.4);
+
+  /* 深色模式圖表色彩 */
+  --chart-1: oklch(0.25 0.08 155);
+  --chart-2: oklch(0.35 0.1 155);
+  --chart-3: oklch(0.45 0.12 155);
+  --chart-4: oklch(0.55 0.14 155);
+  --chart-5: oklch(0.65 0.16 155);
+
+  --sidebar: oklch(0.12 0.01 155);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.4 0.12 155);
+  --sidebar-primary-foreground: oklch(0.95 0 0);
+  --sidebar-accent: oklch(0.2 0.02 155);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.2 0.01 155);
+  --sidebar-ring: oklch(0.4 0.12 155 / 0.4);
+
+  /* 深色模式土銀品牌色 */
+  --land-bank-green: oklch(0.4 0.12 155);
+  --land-bank-gold: oklch(0.65 0.15 75);
+  --land-bank-light-green: oklch(0.25 0.08 155);
+  --trust-blue: oklch(0.45 0.1 210);
+  --stability-gray: oklch(0.55 0.02 0);
+  --heritage-brown: oklch(0.5 0.08 45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: var(--font-noto-sans-tc), var(--font-inter), system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* 新增土銀品牌色彩到主題系統 */
+  --color-land-bank-green: var(--land-bank-green);
+  --color-land-bank-gold: var(--land-bank-gold);
+  --color-land-bank-light-green: var(--land-bank-light-green);
+  --color-trust-blue: var(--trust-blue);
+  --color-stability-gray: var(--stability-gray);
+  --color-heritage-brown: var(--heritage-brown);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* 添加更專業的字體渲染 */
+    font-feature-settings: "kern" 1, "liga" 1;
+    text-rendering: optimizeLegibility;
+    font-family: var(--font-sans);
+  }
+
+  /* 更新土銀企業精神相關的基礎樣式為更保守專業的風格 */
+  .land-bank-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--land-bank-green) 0%,
+      var(--land-bank-light-green) 50%,
+      var(--land-bank-gold) 100%
+    );
+  }
+
+  .trust-shadow {
+    box-shadow: 0 2px 12px rgba(26, 77, 46, 0.12), 0 1px 3px rgba(26, 77, 46, 0.08);
+  }
+
+  .stability-border {
+    border: 1.5px solid var(--land-bank-green);
+  }
+
+  .professional-text {
+    font-weight: 500;
+    letter-spacing: 0.015em; /* 稍微減少字間距，更符合銀行業風格 */
+    line-height: 1.5;
+  }
+
+  /* 新增土銀官方風格的專業樣式 */
+  .heritage-text {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--heritage-brown);
+  }
+
+  .trust-badge {
+    background: linear-gradient(45deg, var(--trust-blue), var(--land-bank-green));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+}
+
+/* 更新土銀專屬動畫效果為更穩重的風格 */
+@keyframes land-bank-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.01); /* 減少動畫幅度，更穩重 */
+  }
+}
+
+@keyframes trust-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 3px var(--land-bank-green);
+  }
+  50% {
+    box-shadow: 0 0 8px var(--land-bank-green), 0 0 12px var(--land-bank-light-green);
+  }
+}
+
+/* 新增專業穩重的動畫效果 */
+@keyframes heritage-fade {
+  0% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.land-bank-pulse {
+  animation: land-bank-pulse 3s ease-in-out infinite; /* 放慢動畫速度 */
+}
+
+.trust-glow {
+  animation: trust-glow 4s ease-in-out infinite; /* 放慢動畫速度 */
+}
+
+.heritage-fade {
+  animation: heritage-fade 2s ease-in-out infinite alternate;
+}
